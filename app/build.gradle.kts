@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -49,4 +50,10 @@ dependencies {
     // For control over item selection of both touch and mouse driven selection
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation("androidx.activity:activity-ktx:1.7.0")
+
+    val room_version = "2.5.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
 }
